@@ -1,5 +1,8 @@
 ---
+const response = await fetch(`${Astro.url}api/character.json`);
+const data = await response.json();
 
+Astro.response.headers.set("Cache-Control", "public, max-age=5, s-maxage=30"); 
 ---
 
 <html lang="en">
@@ -12,5 +15,6 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<pre>{JSON.stringify(data, null, 2)}</pre>
 	</body>
 </html>
