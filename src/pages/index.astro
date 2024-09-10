@@ -1,8 +1,8 @@
 ---
-const response = await fetch(`${Astro.url}api/character.json`);
+const response = await fetch(`${Astro.url.href}api/character.json`);
 const data = await response.json();
 
-Astro.response.headers.set("Cache-Control", "public, max-age=5, s-maxage=30"); 
+Astro.response.headers.set("Cache-Control", "public, max-age=5, s-maxage=3600");
 ---
 
 <html lang="en">
